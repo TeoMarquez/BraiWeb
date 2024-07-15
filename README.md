@@ -12,7 +12,7 @@ Nos proponemos crear un sistema informático avanzado que traduzca contenido dig
    
 2. **Traducción de Texto a Braille:** Desarrollaremos un algoritmo de traducción que convierta texto digital en formato Braille. La traducción será precisa y permitirá a los usuarios acceder al contenido de manera efectiva.
 
-## Tecnologías Utilizadas
+## 🛠️ Tecnologías Utilizadas
 
 - **Python:** Lenguaje de programación principal para el desarrollo del algoritmo de traducción.
 - **HTML/CSS/JavaScript:** Para la interfaz de usuario web en Braille.
@@ -28,7 +28,7 @@ Para utilizar la aplicación de Traducción a Braille, sigue estos pasos:
 
 1. **Clonar el Repositorio:**
    ```
-   git clone https://github.com/tu-usuario/Proyecto-Traducción-Braille.git](https://github.com/TeoMarquez/doTKi
+   git clone https://github.com/TeoMarquez/doTKi
    ```
    
 2. **Instalar Dependencias:**
