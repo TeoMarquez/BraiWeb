@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAI.NET</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <a href="{{ url_for('index') }}" class="header-title">BRAI.NET</a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="{{ url_for('quienes_somos') }}">¿Quienes Somos?</a></li>
+                    <li><a href="{{ url_for('faqs') }}">FAQS</a></li>
+                    <li><a href="{{ url_for('iniciar_sesion') }}">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <h2>Funcionamiento:</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi odio autem eligendi molestiae dolorum placeat, vero asperiores expedita reprehenderit soluta totam? Voluptate recusandae cupiditate maiores ducimus quod consequuntur pariatur iste?</p>
+                <div class="translation-box">
+                    <div class="box-wrapper">
+                        <div class="btn-group">
+                            <button class="active" disabled>Español</button>
+                        </div>
+                        <div class="textarea-container">
+                            <textarea id="original-textarea" placeholder="Ingrese su texto aquí" ></textarea>
+                            <div id="textarea-info" class="textarea-info">0 / 300 caracteres</div>
+                            <a href="{{ url_for('upload') }}">
+                                <button class="subida">Subir Archivo</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="box-wrapper">
+                        <div class="btn-group">
+                            <button class="active" disabled>Braille</button>
+                        </div>
+                        <div class="box">
+                            <textarea id="translated-textarea" class="translated-textarea" placeholder="Traducción" disabled></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 BRAI.NET - Creado por Alejandra Justiniano y Mateo Márquez</p>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script> <!-- Incluir el script de JavaScript -->
+</body>
+</html>

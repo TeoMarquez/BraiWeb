@@ -1,0 +1,20 @@
+idea PF
+
+=== === Fundamentos de la forma mas basica del proyecto === === 
+
+traductor de texto a braille y ademas un generador de documento de los cortes para reproduccion de textos
+se usara de interfaz una pagina web (kiara)
+
+1 - operaciones 
+	a- subida y lectura de archivos locales (word, pdf y txt) */ opcion de aplicar lenguaje natural /*
+	ab- determinar alfabeto a utilizar /// *deteccion y pasaje de ttp imagenes* 
+	b- traducir y formular nuevo archivo de texto (descargar)
+ 
+2 - requisitos
+	a- permiso de acceso a archivos locales
+	b- conexiones (nodeJS) entre los datos formularios y backend servidor (entrada pdf,proceso nodeJS/python, salida nuevo pdf)
+
+===============================puto el que lo lea==================================
+
+
+

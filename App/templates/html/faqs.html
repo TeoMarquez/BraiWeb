@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAI.NET - FAQs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/faqs.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <a href="{{ url_for('index') }}" class="header-title">BRAI.NET</a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="{{ url_for('quienes_somos') }}">¿Quienes Somos?</a></li>
+                    <li><a href="{{ url_for('faqs') }}">FAQS</a></li>
+                    <li><a href="{{ url_for('iniciar_sesion') }}">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="faqs">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="faq-item">
+                    <h3>¿Qué es BRAI.NET?</h3>
+                    <p>BRAI.NET es un proyecto escolar diseñado para romper barreras inclusivas al facilitar el acceso a la información a personas con dificultades visuales o ciegas. Ofrecemos un traductor que convierte texto de español a braille y viceversa.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Cómo utilizo el traductor de español a braille?</h3>
+                    <p>Para utilizar el traductor, simplemente ingresa el texto en español en el campo de entrada, selecciona el botón "Español" y haz clic en el botón de traducir. El texto traducido aparecerá en el campo de salida.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Cómo utilizo el traductor de braille a español?</h3>
+                    <p>Para traducir de braille a español, ingresa el texto en braille en el campo de entrada, selecciona el botón "Braille" y haz clic en el botón de traducir. El texto traducido aparecerá en el campo de salida.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿El traductor de BRAI.NET es gratuito?</h3>
+                    <p>Sí, el traductor es completamente gratuito y está disponible para todos los usuarios sin ningún costo.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Necesito crear una cuenta para usar el traductor?</h3>
+                    <p>No, no es necesario crear una cuenta para usar el traductor. Sin embargo, al crear una cuenta podrás guardar tus traducciones y acceder a otras funciones adicionales.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿El traductor funciona en todos los dispositivos?</h3>
+                    <p>Sí, BRAI.NET está diseñado para ser accesible desde cualquier dispositivo, ya sea una computadora, una tableta o un teléfono móvil.</p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 BRAI.NET - Creado por Alejandra Justiniano y Mateo Márquez</p>
+        </footer>
+    </div>
+</body>
+</html>

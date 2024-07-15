@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BRAI.NET - Subir Archivos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <a href="{{ url_for('index') }}" class="header-title">BRAI.NET</a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="{{ url_for('quienes_somos') }}">¿Quienes Somos?</a></li>
+                    <li><a href="{{ url_for('faqs') }}">FAQS</a></li>
+                    <li><a href="{{ url_for('iniciar_sesion') }}">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="center-container">
+                <div class="form-container">
+                    <form method="POST" action="/upload" enctype="multipart/form-data">
+                        <label for="file-upload" class="file-label" id="file-label">
+                            <span>Elegir archivo</span>
+                            <input id="file-upload" type="file" name="file" accept=".pdf,.doc,.docx,.csv,.txt" onchange="updateFileName()">
+                        </label>
+                        <input type="submit" value="Subir Archivo" class="submit-button">
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 BRAI.NET - Creado por Alejandra Justiniano y Mateo Márquez</p>
+        </footer>
+    </div>
+
+    <script>
+        function updateFileName() {
+            const input = document.getElementById('file-upload');
+            const label = document.getElementById('file-label');
+            const fileName = input.files[0].name;
+            const truncatedName = fileName.length > 50 ? fileName.substring(0, 50) + '...' : fileName;
+            label.querySelector('span').textContent = truncatedName;
+        }
+    </script>
+</body>
+</html>
