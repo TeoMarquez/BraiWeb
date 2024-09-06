@@ -2,3 +2,5 @@ pip install Flask python-docx pymupdf
 pip install Flask-SQLAlchemy
 pip install pdfkit
 pip install weasyprint
+pip install stripe
+pip install python-dotenv
