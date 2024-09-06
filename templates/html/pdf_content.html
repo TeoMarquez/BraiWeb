@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contenido de {{ filename }}</title>
+    <style>
+        @font-face {
+            font-family: 'braille';
+            src: url('http://localhost:5000/static/fonts/braile-8-puntos.ttf') format('truetype');
+        }
+
+        #file-content {
+            font-family: 'braille', 'Comic Sans MS', 'Helvetica', sans-serif;
+            white-space: pre-wrap; /* Asegura que el formato de espacios y saltos de línea se respete */
+        }
+    </style>
+</head>
+<body>
+    <pre id="file-content">
+        {{ text }}
+    </pre>
+</body>
+</html>

@@ -1,0 +1,87 @@
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.faqs {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    font-weight: 500;
+}
+/* Cambia el color de fondo del acordeón */
+.accordion-item {
+    background-color: #1E1E1E; /* Fondo oscuro */
+    border: 1px solid #ABE188; /* Borde verde */
+}
+
+/* Cambia el color del botón cuando está cerrado */
+.accordion-button {
+    background-color: #1E1E1E; /* Fondo oscuro */
+    color: #ABE188; /* Texto verde */
+    border: none; /* Quita el borde predeterminado */
+    box-shadow: none; /* Quita la sombra predeterminada */
+}
+
+/* Cambia el color del botón cuando está abierto */
+.accordion-button:not(.collapsed) {
+    color: #000000; /* Texto negro */
+    background-color: #ABE188; /* Fondo verde */
+    box-shadow: none; /* Quita la sombra predeterminada */
+}
+
+/* Elimina el fondo celeste cuando se hace clic */
+.accordion-button:focus {
+    box-shadow: none; /* Quita la sombra predeterminada del enfoque */
+    background-color: #ABE188; /* Fondo verde cuando está enfocado */
+    color: #000000; /* Texto negro cuando está enfocado */
+    outline: none; /* Quita el contorno de enfoque */
+}
+
+/* Cambia el color del contenido del acordeón */
+.accordion-body {
+    background-color: #ffffff; /* Fondo un poco más claro */
+    color: #000000; /* Texto blanco */
+}
+
+/* Cambia el color del borde cuando se expande */
+.accordion-button::after {
+    color: #ABE188; /* Color del icono de expandir/contraer */
+}
+
+/* Ajusta el color de fondo del contenedor expandido */
+.accordion-collapse {
+    background-color: #1E1E1E;
+}
+
+/* Cambia el color de la sombra si la hay */
+.accordion-item {
+    box-shadow: 0 0 0.5rem #ABE188;
+}
+
+/* Asegúrate de que el foco no tenga fondo celeste */
+.accordion-button:focus:not(.collapsed) {
+    background-color: #ABE188; /* Fondo verde cuando está enfocado */
+    color: #000000; /* Texto negro cuando está enfocado */
+    box-shadow: none; /* Elimina cualquier sombra de enfoque predeterminada */
+}
+
+/* Estilo adicional para el botón activo */
+.accordion-button.active {
+    background-color: #ABE188; /* Fondo verde cuando está activo */
+    color: #000000; /* Texto negro cuando está activo */
+}

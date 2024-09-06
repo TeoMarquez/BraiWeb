@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'braille';
+    src: url('../fonts/braile-8-puntos.ttf') format('truetype');
+}
+html, body, .wrapper{
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+body {
+    background: linear-gradient(45deg, #212121, #000, #ABE188);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+main {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+footer {
+    background-color: #212121;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: auto;
+}
