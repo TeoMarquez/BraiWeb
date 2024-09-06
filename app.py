@@ -11,11 +11,20 @@ from txt_processor import extract_text_from_txt
 from config import UPLOAD_FOLDER, ALLOWED_EXTENSIONS
 from models import db, User
 from queries import register_user
-import pdfkit
+import stripe
 
+from dotenv import load_dotenv
+import os
+
+# Cargar las variables de entorno desde el archivo .env
+load_dotenv()
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config.from_object('config')
+
+# Configuracion de Pasarella
+stripe.api_key = app.config['STRIPE_TEST_SECRET_KEY']
+
 
 # Configuración de SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:12345678@localhost/braiNet'
@@ -179,6 +188,61 @@ def check_user_credentials(email, password):
         return True, None, user.id, user.is_premium
     else:
         return False, "Correo electrónico o contraseña incorrectos.", None, None
+
+
+@app.route('/myprofile')
+def myprofile():
+    return render_template('html/view-user.html')
+
+@app.route('/profilePremium')
+def profilePremium():
+    return render_template('html/view-user-premium.html')
+
+@app.route('/get_user_info', methods=['GET'])
+def get_user_info():
+    user_id = request.args.get('user_id')
+    if user_id:
+        user = User.query.get(user_id)
+        if user:
+            return jsonify({
+                'name': user.name,
+                'email': user.email,
+                'plan': 'Premium' if user.is_premium else 'No Premium'
+            })
+        return jsonify({'error': 'Usuario no encontrado'}), 404
+    return jsonify({'error': 'No se proporcionó ID de usuario'}), 400
+
+
+@app.route('/update_to_premium', methods=['POST'])
+def update_to_premium():
+    data = request.get_json()
+    user_id = data['user_id']
+
+    user = User.query.get(user_id)
+    if user:
+        user.is_premium = True
+        try:
+            db.session.commit()
+            return jsonify({'success': True})
+        except Exception as e:
+            db.session.rollback()
+            return jsonify({'error': str(e)}), 500
+    else:
+        return jsonify({'error': 'Usuario no encontrado'}), 404
+    
+
+@app.route('/create-payment-intent', methods=['POST'])
+def create_payment_intent():
+    data = request.get_json()
+    try:
+        intent = stripe.PaymentIntent.create(
+            amount=data['amount'],  # En centavos
+            currency='Ars',         # Cambia la moneda según tus necesidades
+            payment_method_types=['card']
+        )
+        return jsonify({'client_secret': intent.client_secret})
+    except stripe.error.StripeError as e:
+        return jsonify({'error': str(e)}), 500
 
 
 if __name__ == '__main__':
