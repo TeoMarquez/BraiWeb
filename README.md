@@ -1,4 +1,4 @@
-# BraiWeb - En proyecto
+# BraiNet - En proyecto
 
 Desarrollo de un sistema de traducción a Braille que permita la accesibilidad de contenido para personas con discapacidad visual.
 
